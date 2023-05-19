@@ -18,7 +18,7 @@ from scipy.signal import savgol_filter
 # ACCESS_TOKEN = "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"     # makaufmanUI
 ACCESS_TOKEN = "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"       # ranjeetpajeet
 g = Github(ACCESS_TOKEN)
-repo = g.get_repo('makaufmanUI/pi-obd')
+repo = g.get_repo('ranjeetpajeet/pi-obd')
 
 def get_most_recent_data_file():
     contents = repo.get_contents("data")
