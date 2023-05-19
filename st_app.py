@@ -105,6 +105,7 @@ def plot_data(x: pd.Series, y: pd.Series, xlabel: str, ylabel: str, title: str =
         plt.title(title)
     plt.xlabel(xlabel, fontsize=13, labelpad=15)
     plt.ylabel(ylabel, fontsize=13, labelpad=15)
+    plt.tick_params(axis='both', which='major', labelsize=9)
     return fig
 
 
@@ -120,6 +121,7 @@ def plot_data_many(x: pd.Series, ys: list[pd.Series], xlabel: str, titles: list[
     plt.xlabel(xlabel, fontsize=13, labelpad=15)
     if ylabel is not None:
         plt.ylabel(ylabel, fontsize=13, labelpad=15)
+    plt.tick_params(axis='both', which='major', labelsize=9)
     plt.legend()
     return fig
 
