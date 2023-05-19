@@ -283,42 +283,42 @@ if submit:
             to_plot.append(catalyst_temperature.post_cat)
             titles.append("Catalyst Temperature - Post-Catalytic Converter")
         if use_savgol:
-            st.pyplot(plot_data_many(timestamps, to_plot, "Time (s)", titles, savgol=True, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data_many(timestamps, to_plot, "Time ($s$)", titles, savgol=True, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         else:
-            st.pyplot(plot_data_many(timestamps, to_plot, "Time (s)", titles))
+            st.pyplot(plot_data_many(timestamps, to_plot, "Time ($s$)", titles))
     else:
         # get the one checkbox that is selected
         if rpm_checkbox:
-            st.pyplot(plot_data(timestamps, rpm, "Time (s)", "RPM", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, rpm, "Time ($s$)", "RPM", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif speed_checkbox:
-            st.pyplot(plot_data(timestamps, speed, "Time (s)", "Speed ($mph$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, speed, "Time ($s$)", "Speed ($mph$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif timing_advance_checkbox:
-            st.pyplot(plot_data(timestamps, timing_advance, "Time (s)", "Timing Advance ($deg$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, timing_advance, "Time ($s$)", "Timing Advance ($deg$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif fuel_rail_pressure_checkbox:
-            st.pyplot(plot_data(timestamps, fuel.rail_pressure, "Time (s)", "Fuel Rail Pressure ($psi$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, fuel.rail_pressure, "Time ($s$)", "Fuel Rail Pressure ($psi$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif short_term_o2_trim_checkbox:
-            st.pyplot(plot_data(timestamps, short_term_trim.o2, "Time (s)", "O2 Trim ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, short_term_trim.o2, "Time ($s$)", "O2 Trim ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif short_term_fuel_trim_checkbox:
-            st.pyplot(plot_data(timestamps, short_term_trim.fuel, "Time (s)", "Fuel Trim ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, short_term_trim.fuel, "Time ($s$)", "Fuel Trim ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif coolant_temperature_checkbox:
-            st.pyplot(plot_data(timestamps, coolant_temperature, "Time (s)", "Coolant Temperature ($F$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, coolant_temperature, "Time ($s$)", "Coolant Temperature ($F$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif absolute_engine_load_checkbox:
-            st.pyplot(plot_data(timestamps, engine_load.absolute, "Time (s)", "Absolute Engine Load ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, engine_load.absolute, "Time ($s$)", "Absolute Engine Load ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif calculated_engine_load_checkbox:
-            st.pyplot(plot_data(timestamps, engine_load.calculated, "Time (s)", "Calculated Engine Load ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, engine_load.calculated, "Time ($s$)", "Calculated Engine Load ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif fuel_level_checkbox:
-            st.pyplot(plot_data(timestamps, fuel.level, "Time (s)", "Fuel Level ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, fuel.level, "Time ($s$)", "Fuel Level ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif intake_manifold_pressure_checkbox:
-            st.pyplot(plot_data(timestamps, intake_manifold_pressure, "Time (s)", "Intake Manifold Pressure ($psi$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, intake_manifold_pressure, "Time ($s$)", "Intake Manifold Pressure ($psi$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif relative_throttle_pos_checkbox:
-            st.pyplot(plot_data(timestamps, throttle_position.relative, "Time (s)", "Relative Throttle Position ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, throttle_position.relative, "Time ($s$)", "Relative Throttle Position ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif absolute_throttle_pos_checkbox:
-            st.pyplot(plot_data(timestamps, throttle_position.absolute, "Time (s)", "Absolute Throttle Position ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, throttle_position.absolute, "Time ($s$)", "Absolute Throttle Position ($%$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif o2_sensor1_current_checkbox:
-            st.pyplot(plot_data(timestamps, o2_sensor.pre_cat_current, "Time (s)", "Pre-Cat O2 Sensor Current ($mA$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, o2_sensor.pre_cat_current, "Time ($s$)", "Pre-Cat O2 Sensor Current ($mA$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif o2_sensor2_voltage_checkbox:
-            st.pyplot(plot_data(timestamps, o2_sensor.post_cat_voltage, "Time (s)", "Post-Cat O2 Sensor Voltage ($V$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, o2_sensor.post_cat_voltage, "Time ($s$)", "Post-Cat O2 Sensor Voltage ($V$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif catalyst_temperature_sensor1_checkbox:
-            st.pyplot(plot_data(timestamps, catalyst_temperature.pre_cat, "Time (s)", "Pre-Cat Catalyst Temperature ($F$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
+            st.pyplot(plot_data(timestamps, catalyst_temperature.pre_cat, "Time ($s$)", "Pre-Cat Catalyst Temperature ($F$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
         elif catalyst_temperature_sensor2_checkbox:
-            plot_data(timestamps, catalyst_temperature.post_cat, "Time (s)", "Post-Cat Catalyst Temperature ($F$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder)
+            st.pyplot(plot_data(timestamps, catalyst_temperature.post_cat, "Time ($s$)", "Post-Cat Catalyst Temperature ($F$)", savgol=use_savgol, savgol_window_length=savgol_window_length, savgol_polyorder=savgol_polyorder))
