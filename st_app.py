@@ -18,8 +18,16 @@ from scipy.signal import savgol_filter
 # ACCESS_TOKEN = "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"     # makaufmanUI
 # ACCESS_TOKEN = "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"       # ranjeetpajeet
 # g = Github(ACCESS_TOKEN)
-g = Github("RanjeetPajeet", "Lookay008??") 
-repo = g.get_repo('ranjeetpajeet/pi-obd')
+# g = Github("RanjeetPajeet", "Lookay008??") 
+# repo = g.get_repo('ranjeetpajeet/pi-obd')
+
+if 'g' not in st.session_state:
+    st.session_state.g = Github("RanjeetPajeet", "Lookay008??") 
+if 'repo' not in st.session_state:
+    st.session_state.repo = st.session_state.g.get_repo('RanjeetPajeet/pi-obd')
+
+g = st.session_state.g
+repo = st.session_state.repo
 
 def get_most_recent_data_file():
     contents = repo.get_contents("data")
@@ -61,6 +69,9 @@ st.markdown(body=\
 # load data
 if 'data' not in st.session_state:
     st.session_state.data = None
+
+def cache_selected_data(datafilename):
+    st.session_state.data = Data(f"data/{datafilename}")
 
 
 @dataclass
@@ -157,7 +168,7 @@ st.sidebar.title("Options")
 st.sidebar.markdown("---")
 st.sidebar.markdown("# Data")
 st.sidebar.write(" ")
-data_file = st.sidebar.selectbox("Data file", options=[*get_all_data_files()], index=0, key="data_file", help="Select the data file to use for visualization.")
+data_file = st.sidebar.selectbox("Data file", options=[*get_all_data_files()], index=0, key="data_file", help="Select the data file to use for visualization.", on_change=cache_selected_data)
 st.sidebar.markdown("---")
 st.sidebar.markdown("# Plotting")
 st.sidebar.write(" ")
