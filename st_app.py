@@ -95,7 +95,7 @@ class ShortTermTrim:
 
 
 
-@st.cache
+
 def plot_data(x: pd.Series, y: pd.Series, xlabel: str, ylabel: str, title: str = None, savgol: bool = False, savgol_window_length: int = 51, savgol_polyorder: int = 3) -> None:
     if savgol:
         y = savgol_filter(y, savgol_window_length, savgol_polyorder)
@@ -107,7 +107,7 @@ def plot_data(x: pd.Series, y: pd.Series, xlabel: str, ylabel: str, title: str =
     st.pyplot()
 
 
-@st.cache
+
 def plot_data_many(x: pd.Series, ys: list[pd.Series], xlabel: str, titles: list[str], ylabel: str = None, savgol: bool = False, savgol_window_length: int = 51, savgol_polyorder: int = 3) -> None:
     if savgol:
         for i in range(len(ys)):
