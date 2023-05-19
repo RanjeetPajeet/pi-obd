@@ -60,7 +60,7 @@ st.markdown(body=\
 
 # load data
 if 'data' not in st.session_state:
-    st.session_state.data = load_data()
+    st.session_state.data = None
 
 
 @dataclass
