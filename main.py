@@ -362,7 +362,7 @@ def main() -> None:
             car.disconnect()
             if is_connected_to_network():
                 # ACCESS_TOKEN = "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"     # makaufmanUI
-                ACCESS_TOKEN = "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"       # ranjeetpajeet
+                ACCESS_TOKEN = "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"       # ranjeetpajeet
                 g = Github(ACCESS_TOKEN)
                 repo = g.get_repo('ranjeetpajeet/pi-obd')
                 with open(FILENAME, 'r') as f:
