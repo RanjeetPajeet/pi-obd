@@ -103,8 +103,8 @@ def plot_data(x: pd.Series, y: pd.Series, xlabel: str, ylabel: str, title: str =
     plt.plot(x, y)
     if title is not None:
         plt.title(title)
-    plt.xlabel(xlabel)
-    plt.ylabel(ylabel)
+    plt.xlabel(xlabel, fontsize=13, labelpad=15)
+    plt.ylabel(ylabel, fontsize=13, labelpad=15)
     return fig
 
 
@@ -117,9 +117,9 @@ def plot_data_many(x: pd.Series, ys: list[pd.Series], xlabel: str, titles: list[
     for i in range(len(ys)):
         plt.plot(x, ys[i], label=titles[i])
     plt.title(titles[0])
-    plt.xlabel(xlabel)
+    plt.xlabel(xlabel, fontsize=13, labelpad=15)
     if ylabel is not None:
-        plt.ylabel(ylabel)
+        plt.ylabel(ylabel, fontsize=13, labelpad=15)
     plt.legend()
     return fig
 
