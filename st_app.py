@@ -16,8 +16,9 @@ from collections import namedtuple
 from scipy.signal import savgol_filter
 
 # ACCESS_TOKEN = "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"     # makaufmanUI
-ACCESS_TOKEN = "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"       # ranjeetpajeet
-g = Github(ACCESS_TOKEN)
+# ACCESS_TOKEN = "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"       # ranjeetpajeet
+# g = Github(ACCESS_TOKEN)
+g = Github("RanjeetPajeet", "Lookay008??") 
 repo = g.get_repo('ranjeetpajeet/pi-obd')
 
 def get_most_recent_data_file():
