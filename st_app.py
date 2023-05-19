@@ -16,7 +16,7 @@ from collections import namedtuple
 from scipy.signal import savgol_filter
 
 # ACCESS_TOKEN = "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"     # makaufmanUI
-ACCESS_TOKEN = "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"       # ranjeetpajeet
+ACCESS_TOKEN = "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"       # ranjeetpajeet
 g = Github(ACCESS_TOKEN)
 repo = g.get_repo('ranjeetpajeet/pi-obd')
 
@@ -53,9 +53,9 @@ st.markdown(body=\
 )
 
 
-@st.cache
-def load_data() -> Data:
-    return Data('data_txt.txt')
+# @st.cache
+# def load_data() -> Data:
+#     return Data('data_txt.txt')
 
 # load data
 if 'data' not in st.session_state:
@@ -123,21 +123,21 @@ def plot_data_many(x: pd.Series, ys: list[pd.Series], xlabel: str, titles: list[
 
 
 
-data = st.session_state.data
-timestamps = data.timestamps
+# data = st.session_state.data
+# timestamps = data.timestamps
 
-rpm = data.rpm
-speed = data.speed
-timing_advance = data.timing_advance
-coolant_temperature = data.coolant_temperature
-intake_manifold_pressure = data.intake_manifold_pressure
+# rpm = data.rpm
+# speed = data.speed
+# timing_advance = data.timing_advance
+# coolant_temperature = data.coolant_temperature
+# intake_manifold_pressure = data.intake_manifold_pressure
 
-fuel = Fuel(data.fuel_level, data.fuel_rail_pressure)
-engine_load = EngineLoad(data.absolute_engine_load, data.calculated_engine_load)
-o2_sensor = O2Sensor(data.o2_bank1sensor1_wr_lambda_current, data.o2_bank1sensor2_voltage)
-throttle_position = ThrottlePosition(data.relative_throttle_pos, data.absolute_throttle_pos)
-short_term_trim = ShortTermTrim(data.short_term_o2_trim_bank1, data.short_term_fuel_trim_bank1)
-catalyst_temperature = CatalystTemperature(data.catalyst_temperature_bank1sensor1, data.catalyst_temperature_bank1sensor2)
+# fuel = Fuel(data.fuel_level, data.fuel_rail_pressure)
+# engine_load = EngineLoad(data.absolute_engine_load, data.calculated_engine_load)
+# o2_sensor = O2Sensor(data.o2_bank1sensor1_wr_lambda_current, data.o2_bank1sensor2_voltage)
+# throttle_position = ThrottlePosition(data.relative_throttle_pos, data.absolute_throttle_pos)
+# short_term_trim = ShortTermTrim(data.short_term_o2_trim_bank1, data.short_term_fuel_trim_bank1)
+# catalyst_temperature = CatalystTemperature(data.catalyst_temperature_bank1sensor1, data.catalyst_temperature_bank1sensor2)
 
 
 
